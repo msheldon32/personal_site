@@ -1,0 +1,13 @@
+Back-end:
+    - Node.js
+    - Serve html and little else (for now!)
+
+Front-end:
+    - React.js
+    - Shards react for UI
+
+To display:
+    - Flash page
+    - Resume
+    - Projects
+    - Contact
