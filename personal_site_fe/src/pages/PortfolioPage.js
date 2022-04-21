@@ -10,12 +10,12 @@ function  PortfolioPage (props) {
     return (<>
         <Paper>
           <PortfolioCard name="JLINE" link="https://github.com/imperial-qore/line-solver-java/" second_image="/static/images/jline.png" image_location="/static/images/jline_out.png">
-            Developed in collaboration with Giuliano Casale and the QORE team, JLINE is a port of the popular LINE simulation and modeling environment to the Java programming language.
+            Developed in collaboration with Giuliano Casale and the QORE group, JLINE is a port of the popular LINE simulation and modeling environment to the Java programming language.
 
-            SolverSSA, a Markovian discrete-event simulator, along with the inital platform release, were developed as part of my MSc dissertation at Imperial College.
+            The inital platform release, including the Markovian discrete-event simulator SolverSSA, were developed as part of my MSc dissertation at Imperial College.
           </PortfolioCard>
-            <PortfolioCard name="AgentLib" link="">
-              AgentLib is a Java-based toolkit for defining and training reinforcement learning models. AgentLib focuses on rapid development, ease of use, and clean integration with other software.
+            <PortfolioCard name="AgentTools" link="">
+              AgentTools is a Java-based toolkit for defining and training reinforcement learning models. AgentLib focuses on rapid development, ease of use, and clean integration with other software.
             </PortfolioCard>
         </Paper>
 

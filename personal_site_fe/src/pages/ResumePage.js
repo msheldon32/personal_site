@@ -47,22 +47,25 @@ function ResumePage (props) {
             </ResumeItem>
             <ResumeItem title="Buckle LLC">
             <ResumeSubItem title="Data Analytics Intern" start_date={"Aug 2018"} end_date={"Dec 2018"}>
-                  Developed analytics scripts, and an internal website for analyzing the rideshare market.
+                  Developed analytics scripts, alongside a database, for data related to the rideshare market. <br />
+                  Developed an website using d3 for internal analysis, reporting, and data presentation.
             </ResumeSubItem>
             </ResumeItem>
             <ResumeItem title="Equifax">
             <ResumeSubItem title="Operations Intern" start_date={"May 2018"} end_date={"Dec 2018"}>
-                  Developed analytics dashboards for both internal and external stakeholders.
+                  Developed analytics dashboards for both internal and external stakeholders. <br />
+                  Wrote scripts to automate aggregation and reporting for business intelligence capabilities.
             </ResumeSubItem>
             </ResumeItem>
           </ResumeCard>
           <ResumeCard name="Teaching">
             <ResumeItem title="TA Positions">
             <ResumeSubItem title="Introduction to Machine Learning" date={"Spring 2022"}>
-              Led the marking process for ML-related development coursework.
+              Instructed students on supervised and unsupervised learning, model selection, model evaluation, and neural networks.<br />
+              Led the marking and moderation processes for coursework.
             </ResumeSubItem>
             <ResumeSubItem title="DevOps Laboratory" date={"Spring 2022"}>
-              Instructed in labs involving containerization and deployment of web applications.
+              Participated in instruction and marking for a group project, involving containerization and deployment of a web application.
             </ResumeSubItem>
             <ResumeSubItem title="Linear Algebra" date={"Spring 2022"}>
               Led students in bi-weekly tutorial sessions covering topics in Linear Algebra.
@@ -81,7 +84,7 @@ function ResumePage (props) {
               Git, Linux
               </ResumeSubItem>
               <ResumeSubItem title="Topics">
-              Machine Learning, Reinforcement Learning, Data Analysis, Cryptography Engineering, Computer Graphics, DevOps
+              Machine Learning, Reinforcement Learning, Data Analysis, Cryptography Engineering, Computer Graphics, DevOps, Anomaly Detection
               </ResumeSubItem>
             </ResumeItem>
             <ResumeItem title="Mathematics">
