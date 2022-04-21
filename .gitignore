@@ -1,0 +1,3 @@
+node_modules/*
+personal_site_fe/node_modules/*
+personal_site_fe/node_modules/build/*
