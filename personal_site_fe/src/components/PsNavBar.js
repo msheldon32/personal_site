@@ -47,7 +47,7 @@ class  PsNavBar extends React.Component {
                       color: isActive ? color_palette["primary"] : color_palette["complement1"],
                         fontFamily: font_palette["subheader"]
                     })} to="/resume">
-                Resume
+                Experience
               </ListItem>
               <ListItem component={NavLink} active={this.props.page=="portfolio"} style={({ isActive }) => ({
                       color: isActive ? color_palette["primary"] : color_palette["complement1"],

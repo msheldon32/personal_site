@@ -1,65 +1,78 @@
 import logo from '../logo.svg';
 import '../App.css';
 
-import React, {useState} from 'react';
+import React, {useState, useReducer} from 'react';
 import {Button, Box} from "@mui/material";
 import {color_palette, font_palette} from '../style/StylePalette.js';
 
+/*
+ * update for synchronous behavior of machine/user/score
+ */
 
 function  RockPaperScissors(props) {
   const [hasPlayed, setHasPlayed] = useState(false);
-  const [machinePlay, setMachinePlay] = useState(0);
-  const [userPlay, setUserPlay] = useState(0);
   const [userScore, setUserScore] = useState(0);
   const [machineScore, setMachineScore] = useState(0);
   const [winner, setWinner] = useState(0);
+  const [playCycle, setPlayCycle] = useState();
+
+  const [playState, dispatchPlayState] = useReducer(function(oldState, action) {
+     var state = [...oldState];
+     setWinner(getWinner(action["machine_play"], action["human_play"]));
+     if (winner != 0) {
+       state[winner-1] += 1;
+     }
+     state[2] = action["machine_play"];
+     state[3] = action["human_play"];
+     return state;
+  }, [0,0,0,0]);
 
   const play_assoc = ["rock", "paper", "scissors"];
-  const winner_assoc = ["neither", "machine", "human"];
+  const player_assoc = ["neither", "machine", "human"];
 
-  React.useEffect(function updateWinner() {
+  function getWinner(machinePlay, userPlay) {
       switch (machinePlay) {
         case 0:
              switch(userPlay) {
                case 0:
-                setWinner(0);
+                return 0;
                 break;
               case 1:
-                setWinner(2);
+                return 2;
                 break;
               case 2:
-                setWinner(1);
+                return 1;
                 break;
              }
           break;
         case 1:
              switch(userPlay) {
                case 0:
-                setWinner(1);
+                return 1;
                 break;
               case 1:
-                setWinner(0);
+                return 0;
                 break;
               case 2:
-                setWinner(2);
+                return 2;
                 break;
              }
           break;
         case 2:
              switch(userPlay) {
                case 0:
-                setWinner(2);
+                return 2;
                 break;
               case 1:
-                setWinner(1);
+                return 1;
                 break;
               case 2:
-                setWinner(0);
+                return 0;
                 break;
              }
           break;
       }
-    }, [machinePlay, userPlay]);
+    }
 
   function displayResults() {
     return ``;
@@ -68,8 +81,10 @@ function  RockPaperScissors(props) {
   function newUserPlay(value) {
     return function() {
       setHasPlayed(true);
-      setMachinePlay(Math.floor(Math.random()*3));
-      setUserPlay(value);
+      dispatchPlayState({
+        "machine_play": Math.floor(Math.random()*3),
+        "human_play": value
+      });
     }
   }
 
@@ -77,9 +92,14 @@ function  RockPaperScissors(props) {
     <>
     {hasPlayed ?
     <Box  m={1}>
-      User plays: {play_assoc[userPlay]}<br /><br />
-      Machine plays: {play_assoc[machinePlay]}<br /><br />
-      {winner_assoc[winner]} wins!
+      User plays: {play_assoc[playState[3]]}<br /><br />
+      Machine plays: {play_assoc[playState[2]]}<br /><br />
+      {player_assoc[winner]} wins!
+    </Box> : <Box m={1} />}
+    {hasPlayed ?
+    <Box  m={1}>
+      User score: {playState[1]}<br /><br />
+      Machine score: {playState[0]}<br /><br />
     </Box> : <Box m={1} />}
     <Box  m={1}>
       <Button onClick={newUserPlay(0)}>Rock</Button>

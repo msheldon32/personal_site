@@ -60,6 +60,10 @@ function ResumePage (props) {
           </ResumeCard>
           <ResumeCard name="Teaching">
             <ResumeItem title="TA Positions">
+            <ResumeSubItem title="Computing Practical I" date={"Spring 2022"}>
+              Helped to develop and grade examination for C programming. <br />
+              Assisted in laboratories to help students develop an emulator and assembler for ARM.
+            </ResumeSubItem>
             <ResumeSubItem title="Introduction to Machine Learning" date={"Spring 2022"}>
               Instructed students on supervised and unsupervised learning, model selection, model evaluation, and neural networks.<br />
               Led the marking and moderation processes for coursework.

@@ -6,6 +6,7 @@ import ResumePage from './pages/ResumePage.js';
 import ContactPage from './pages/ContactPage.js';
 import PortfolioPage from './pages/PortfolioPage.js';
 import DevPage from './pages/DevPage.js';
+import DataPage from './pages/DataPage.js';
 import DemoPage from './pages/DemoPage.js';
 import BlogPage from './pages/BlogPage.js';
 import PsNavBar from './components/PsNavBar.js';
@@ -22,6 +23,7 @@ function App() {
     }
     return inPath.substring(1);
   }
+  document.title = "Matthew Sheldon";
   const loc = getPath(window.location.pathname);
   console.log(loc)
   return (
@@ -36,6 +38,7 @@ function App() {
         <Route path="/dev" element={<DevPage />}></Route>
         <Route path="/demo" element={<DemoPage />}></Route>
         <Route path="/blog" element={<BlogPage />}></Route>
+        <Route path="/data" element={<DataPage />}></Route>
         <Route exact path="/" element={<HomePage />}></Route>
       </Routes>
     </BrowserRouter>

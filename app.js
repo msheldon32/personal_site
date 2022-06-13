@@ -8,7 +8,15 @@ const app = express();
 
 app.use(express.static(path.resolve(__dirname, 'personal_site_fe/build')));
 
-app.get("*", (req, res) => {
+app.get("/", (req, res) => {
+  console.log(`get request: {req}`);
+  //res.sendFile(path.resolve(__dirname, 'home.html'));
+  res.sendFile(path.resolve(__dirname, 'personal_site_fe/build', 'index.html'));
+})
+
+app.get("/api", (req, res) => {
+  console.log(`get request: {req}`);
+  //res.sendFile(path.resolve(__dirname, 'home.html'));
   res.sendFile(path.resolve(__dirname, 'personal_site_fe/build', 'index.html'));
 })
 
