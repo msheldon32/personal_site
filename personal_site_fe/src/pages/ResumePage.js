@@ -101,7 +101,7 @@ function ResumePage (props) {
             </ResumeItem>
             <ResumeItem title="Other Skills">
               <ResumeSubItem title="Languages">
-              French (Intermediate), Spanish (Intermediate), Russian (Intermediate)
+              French, Spanish
               </ResumeSubItem>
             </ResumeItem>
           </ResumeCard>

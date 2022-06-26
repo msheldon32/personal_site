@@ -14,6 +14,19 @@ class  PsNavBar extends React.Component {
       "background-color": "white",
       "fontFamily": font_palette["primary"]
     };
+
+    const activeStyle = {
+      color: color_palette["primary"],
+      fontFamily: font_palette["subheader"],
+      fontSize: 16
+    }
+
+    const inactiveStyle = {
+      color: color_palette["complement1"],
+      fontFamily: font_palette["subheader"],
+      fontSize: 16
+    }
+
     return (
       <AppBar style={NavBarStyle} position="sticky">
           <Toolbar>
@@ -30,40 +43,25 @@ class  PsNavBar extends React.Component {
                       <Typography
                             variant="h5"
                             component="div"
-                            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+                            sx={{ mr: 10, display: { xs: 'none', md: 'flex' } }}
                             style={{color: color_palette["primary"],
                                     fontWeight: "bold",
                                     fontSize: 28,
                                     fontFamily: font_palette["header"]}}>
                                     Sheldon
                           </Typography>
-              <ListItem component={NavLink} active={this.props.page=="home"} style={({ isActive }) => ({
-                      color: isActive ? color_palette["primary"] : color_palette["complement1"],
-                        fontFamily: font_palette["subheader"]
-                    })} to="/">
+              <ListItem component={NavLink} active={this.props.page=="home"} style={({isActive}) => (isActive ? activeStyle : inactiveStyle)} to="/">
                 Home
               </ListItem>
-              <ListItem component={NavLink} active={this.props.page=="resume"} style={({ isActive }) => ({
-                      color: isActive ? color_palette["primary"] : color_palette["complement1"],
-                        fontFamily: font_palette["subheader"]
-                    })} to="/resume">
+              <ListItem component={NavLink} active={this.props.page=="resume"} style={({isActive}) => (isActive ? activeStyle : inactiveStyle)} to="/resume">
                 Experience
               </ListItem>
-              <ListItem component={NavLink} active={this.props.page=="portfolio"} style={({ isActive }) => ({
-                      color: isActive ? color_palette["primary"] : color_palette["complement1"],
-                        fontFamily: font_palette["subheader"]
-                    })} to="/portfolio">
+              <ListItem component={NavLink} active={this.props.page=="portfolio"} style={({isActive}) => (isActive ? activeStyle : inactiveStyle)} to="/portfolio">
                 Portfolio
               </ListItem>
-              <ListItem component={NavLink} active={this.props.page=="contact"} style={({ isActive }) => ({
-                      color: isActive ? color_palette["primary"] : color_palette["complement1"],
-                        fontFamily: font_palette["subheader"]
-                    })} to="/contact">
+              <ListItem component={NavLink} active={this.props.page=="contact"} style={({isActive}) => (isActive ? activeStyle : inactiveStyle)} to="/contact">
                 Contact
               </ListItem>
-            {/*<InputGroup size="sm" seamless>
-              <FormInput className="border-0" placeholder="Search..." />
-            </InputGroup>*/}
           </Toolbar>
       </AppBar>);
   }

@@ -23,6 +23,7 @@ function App() {
     }
     return inPath.substring(1);
   }
+  
   document.title = "Matthew Sheldon";
   const loc = getPath(window.location.pathname);
   console.log(loc)
